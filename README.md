@@ -1,1 +1,4 @@
-# basic-calculator-js
+# Basic Calculator
+
+A basic jCalculator.
+
