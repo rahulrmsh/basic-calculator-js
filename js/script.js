@@ -12,7 +12,7 @@ for (var i = 0; i < document.querySelectorAll(".boxes").length; i++) {
                     document.querySelector('#answerKey').value = '';
                     break;
                 case 'minus':
-                    if (parseInt(answerKey) === 0) {
+                    if (parseInt(answerKey) == 0) {
                         answerKey = parseInt(inputKey);
                     } else {
                         answerKey = parseInt(answerKey) - parseInt(inputValue);
@@ -20,18 +20,16 @@ for (var i = 0; i < document.querySelectorAll(".boxes").length; i++) {
                     document.querySelector('#answerKey').value = '';
                     break;
                 case 'multi':
-                    if (parseInt(answerKey) === 0) {
+                    if (parseInt(answerKey) == 0) {
                         answerKey = parseInt(inputKey);
-                        document.querySelector('#answerKey').value = '';
                     } else {
                         answerKey = parseInt(answerKey) * parseInt(inputValue);
                     }
                     document.querySelector('#answerKey').value = '';
                     break;
                 case 'div':
-                    if (parseInt(answerKey) === 0) {
+                    if (parseInt(answerKey) == 0) {
                         answerKey = parseInt(inputKey);
-                        document.querySelector('#answerKey').value = '';
                     } else {
                         answerKey = parseInt(answerKey) / parseInt(inputValue);
                     }
