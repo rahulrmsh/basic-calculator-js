@@ -1,30 +1,65 @@
 "use strict";
 
-// var plusKey = document.querySelector("#plus");
-// plusKey.onclick = function() {
-//         var answerKey = document.querySelector("#answerKey").getAttribute('value');
-//         var newAnswer = answerKey + 500;
-//         document.querySelector("#answerKey").setAttribute('value', newAnswer);
-//     }
-// plusKey.addEventListener('click', function() {
-//     var answerKey = document.querySelector("#answerKey").value;
-//     document.querySelector("#answerKey").setAttribute('value', answerKey + 5550);
-// })
-// document.querySelector('#left').setAttribute('src', 'images/dice' + randomNumber1 + '.png');
-// document.querySelector('#right').setAttribute('src', 'images/dice' + randomNumber2 + '.png');
-// }
-var submitBtn = document.querySelector('#submitKey');
-var plusBtn = document.querySelector('#plus');
+var answerKey = 0;
 
-plusBtn.onclick = function () {
-  var numberValue = document.getElementById("answerKey");
-  numberValue.setAttribute('value', numberValue.value + ' + ');
-};
+for (var i = 0; i < document.querySelectorAll(".boxes").length; i++) {
+  document.querySelectorAll(".boxes")[i].addEventListener("click", function () {
+    var btnName = this.id;
+    var inputValue = document.querySelector('#answerKey').value;
 
-submitBtn.onclick = function () {
-  var numberValue = document.getElementById("answerKey").value;
-  var res = numberValue.split(" ");
-  alert(res);
-};
+    if (isNaN(inputValue)) {
+      alert("Enter a Valid Number.");
+    } else {
+      switch (btnName) {
+        case 'plus':
+          answerKey = parseInt(answerKey) + parseInt(inputValue);
+          document.querySelector('#answerKey').value = '';
+          break;
 
-function setValueKey(answerKey, minusKey, plusKey, multiKey, div) {}
+        case 'minus':
+          if (parseInt(answerKey) === 0) {
+            answerKey = parseInt(inputKey);
+          } else {
+            answerKey = parseInt(answerKey) - parseInt(inputValue);
+          }
+
+          document.querySelector('#answerKey').value = '';
+          break;
+
+        case 'multi':
+          if (parseInt(answerKey) === 0) {
+            answerKey = parseInt(inputKey);
+            document.querySelector('#answerKey').value = '';
+          } else {
+            answerKey = parseInt(answerKey) * parseInt(inputValue);
+          }
+
+          document.querySelector('#answerKey').value = '';
+          break;
+
+        case 'div':
+          if (parseInt(answerKey) === 0) {
+            answerKey = parseInt(inputKey);
+            document.querySelector('#answerKey').value = '';
+          } else {
+            answerKey = parseInt(answerKey) / parseInt(inputValue);
+          }
+
+          document.querySelector('#answerKey').value = '';
+          break;
+
+        default:
+          break;
+      }
+    }
+  });
+}
+
+document.querySelector("#submitKey").addEventListener('click', function () {
+  document.querySelector('#answerKey').value = answerKey;
+  answerKey = 0;
+});
+document.querySelector('#cancelKey').addEventListener('click', function () {
+  answerKey = 0;
+  document.querySelector('#answerKey').value = '';
+});
