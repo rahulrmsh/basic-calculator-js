@@ -1,4 +1,4 @@
 # Basic Calculator
 
-A basic jCalculator.
+A basic js-based calculator.
 
