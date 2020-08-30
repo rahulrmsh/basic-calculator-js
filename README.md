@@ -1,7 +1,11 @@
 # Basic Calculator
 
 A basic js-based calculator.
-<<<<<<< HEAD
-=======
 
->>>>>>> 1815cca9ae2beaa2cf8c20ab3761df09dbd7a020
+| Base Page | Multiply 20 |
+| --- | --- |
+| ![App Icon](images/screens/screen1.png) | ![screenshot](images/screens/screen2.png) |
+| --- | --- |
+| With 50 | Answer |
+| --- | --- |
+| ![App Icon](images/screens/screen3.png) | ![screenshot](images/screens/screen4png) |
